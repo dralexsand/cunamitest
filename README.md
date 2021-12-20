@@ -1,7 +1,27 @@
 ## Api currency
 
+### Setup:
+
+```
+
+git clone https://github.com/dralexsand/cunamitest.git project
+
+cd project
+
+composer update
+
+php artisan migrate
+
+php artisan db:seed
+
+php artisan serve
+
+Default server`s port: 8000
+
+```
 
 ### Create account:
+
 ```
 POST:
 http://127.0.0.1:8000/api/v1/create-account?name=Filomena Herman&email=ursula.dach@example.org&password=password
@@ -12,6 +32,7 @@ http://127.0.0.1:8000/api/v1/create-account?name=Filomena Herman&email=ursula.da
 ```
 
 ### Sign in:
+
 ```
 POST:
 http://127.0.0.1:8000/api/v1/signin?name=Filomena Herman&email=ursula.dach@example.org&password=password
@@ -22,6 +43,7 @@ http://127.0.0.1:8000/api/v1/signin?name=Filomena Herman&email=ursula.dach@examp
 ```
 
 ### Get latest currencies
+
 ```
 GET:
 http://127.0.0.1:8000/api/v1/rates/specific?currency=EUR,GBP&base_currency=USD
@@ -31,7 +53,9 @@ http://127.0.0.1:8000/api/v1/rates/specific?currency=EUR,GBP&base_currency=USD
     "EUR": 0.88881
 }
 ```
+
 ### Get currencies by data range
+
 ```
 GET:
 http://127.0.0.1:8000/api/v1/rates/dynamics?currency=EUR,GBP,CNY&base_currency=USD&date_from=2020-10-01&date_to=2021-12-19
